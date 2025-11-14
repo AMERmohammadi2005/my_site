@@ -5,6 +5,7 @@ app_name = "blog"
 
 urlpatterns = [
     path("" , blog_view ,name='blog'),
-    path("single/" , blog_single_view ,name='blog_single')
+    path("single/" , blog_single_view ,name='blog_single'),
+    path("test/" ,test_view , name ='test'  )
 
 ]
