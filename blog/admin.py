@@ -6,9 +6,9 @@ from blog.models import Post
 class PostAdmin(admin.ModelAdmin):
     date_hierarchy = "created_date"
     empty_value_display = " null"
-    list_display = ["title","counted_view","status",
+    list_display = ["title","counted_view","author","status",
                      "created_date","published_date" ]
-    list_filter = ('status',)
+    list_filter = ('status','author')
     ordering = ["-created_date"]
     search_fields = ['title','content']
     

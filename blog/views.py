@@ -12,7 +12,8 @@ def blog_view(request):
 
 
 def blog_single_view(request ,pid):
-    post = get_object_or_404(Post , pk = pid)
+    posts = Post.objects.filter(status = 1)
+    post = get_object_or_404(posts , pk = pid ,)
     post.counted_view += 1
     post.save(update_fields=['counted_view'])
 
