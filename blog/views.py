@@ -12,12 +12,20 @@ def blog_view(request):
 
 
 def blog_single_view(request ,pid):
+   
     posts = Post.objects.filter(status = 1)
-    post = get_object_or_404(posts , pk = pid ,)
+    post = get_object_or_404(posts  , pk = pid ,)
     post.counted_view += 1
     post.save(update_fields=['counted_view'])
 
-    context = {'post':post }
+    posts_list = list(posts.order_by('id'))
+    
+    current_index = posts_list.index(post)
+    next_post = posts_list[current_index + 1] if current_index + 1 < len(posts_list) else None
+    prev_post = posts_list[current_index - 1] if current_index > 0 else None
+    context = {'post':post,
+               'prev_post' : prev_post,
+                'next_post' :next_post }
     return render(request ,"blog/blog-single.html",context )
 
 def test_view(request , pid):
