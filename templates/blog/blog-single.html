@@ -30,7 +30,7 @@
 				<div class="single-post row">
 					<div class="col-lg-12">
 						<div class="feature-img">
-							<img class="img-fluid" src="{% static 'img/blog/feature-img1.jpg'%}" alt="">
+							<img class="img-fluid" src="{{post.image.url}}" alt="">
 						</div>
 					</div>
 					<div class="col-lg-3  col-md-3 meta-details">
@@ -72,7 +72,7 @@
 						<div
 							class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
 							<div class="thumb">
-								<a href="{% url 'blog:single' prev_post.pk %}"><img class="img-fluid" src="{% static 'img/blog/prev.jpg'%}" alt=""></a>
+								<a href="{% url 'blog:single' prev_post.pk %}"><img class="img-fluid" src="{{prev_post.image.url}}" alt=""></a>
 							</div>
 							<div class="arrow">
 								<a href="{% url 'blog:single' prev_post.pk %}"><span class="lnr text-white lnr-arrow-left"></span></a>
@@ -99,7 +99,7 @@
 								<a href="{% url 'blog:single' next_post.pk %}"><span class="lnr text-white lnr-arrow-right"></span></a>
 							</div>
 							<div class="thumb">
-								<a href="{% url 'blog:single' next_post.pk %}"><img class="img-fluid" src="{% static 'img/blog/next.jpg'%}" alt=""></a>
+								<a href="{% url 'blog:single' next_post.pk %}"><img class="img-fluid" src="{{next_post.image.url}}" alt=""></a>
 							</div>
 						</div>
 					</div>
@@ -239,26 +239,7 @@
 							<button type="submit"><i class="fa fa-search"></i></button>
 						</form>
 					</div>
-					<div class="single-sidebar-widget user-info-widget">
-						<img src="{% static 'img/blog/user-info.png'%}" alt="">
-						<a href="#">
-							<h4>Charlie Barber</h4>
-						</a>
-						<p>
-							Senior blog writer
-						</p>
-						<ul class="social-links">
-							<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-							<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-							<li><a href="#"><i class="fa fa-github"></i></a></li>
-							<li><a href="#"><i class="fa fa-behance"></i></a></li>
-						</ul>
-						<p>
-							Boot camps have its supporters andit sdetractors. Some people do not understand why you
-							should have to spend money on boot camp when you can get. Boot camps have itssuppor ters
-							andits detractors.
-						</p>
-					</div>
+					{% include 'blog/blog-writer.html' %}
 					<div class="single-sidebar-widget popular-post-widget">
 						<h4 class="popular-title">Popular Posts</h4>
 						<div class="popular-post-list">

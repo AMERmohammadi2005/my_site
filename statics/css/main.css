@@ -3533,9 +3533,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   border-color: #eee;
 }
 
-.sidebar-widgets {
-  padding-bottom: 120px;
-}
 
 .widget-wrap {
   background: #fafaff;
@@ -4493,4 +4490,8 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 .footer-text a, .footer-text i {
   color: #f8b600;
+}
+
+.sidebar-widgets {
+  padding-bottom: 20px ;
 }
