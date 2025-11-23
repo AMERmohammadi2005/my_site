@@ -150,67 +150,19 @@
 			</div>
 			<div class="col-lg-4 sidebar-widgets">
 				<div class="widget-wrap">
-					<div class="single-sidebar-widget search-widget">
-						<form class="search-form" action="#">
-							<input placeholder="Search Posts" name="search" type="text" onfocus="this.placeholder = ''"
-								onblur="this.placeholder = 'Search Posts'">
-							<button type="submit"><i class="fa fa-search"></i></button>
-						</form>
-					</div>
+					
+					
+					{% include 'blog/blog-search.html' %}
 
 					{% include 'blog/blog-writer.html' %}
+					
+					{% include 'blog/blog-category.html' %}
+
+					
 
 
-					<div class="single-sidebar-widget popular-post-widget">
-						<h4 class="popular-title">Popular Posts</h4>
-						<div class="popular-post-list">
-							<div class="single-post-list d-flex flex-row align-items-center">
-								<div class="thumb">
-									<img class="img-fluid" src="{% static 'img/blog/pp1.jpg'%}" alt="">
-								</div>
-								<div class="details">
-									<a href="blog-single.html">
-										<h6>Space The Final Frontier</h6>
-									</a>
-									<p>02 Hours ago</p>
-								</div>
-							</div>
-							<div class="single-post-list d-flex flex-row align-items-center">
-								<div class="thumb">
-									<img class="img-fluid" src="{% static 'img/blog/pp2.jpg'%}" alt="">
-								</div>
-								<div class="details">
-									<a href="blog-single.html">
-										<h6>The Amazing Hubble</h6>
-									</a>
-									<p>02 Hours ago</p>
-								</div>
-							</div>
-							<div class="single-post-list d-flex flex-row align-items-center">
-								<div class="thumb">
-									<img class="img-fluid" src="{% static 'img/blog/pp3.jpg'%}" alt="">
-								</div>
-								<div class="details">
-									<a href="blog-single.html">
-										<h6>Astronomy Or Astrology</h6>
-									</a>
-									<p>02 Hours ago</p>
-								</div>
-							</div>
-							<div class="single-post-list d-flex flex-row align-items-center">
-								<div class="thumb">
-									<img class="img-fluid" src="{% static 'img/blog/pp4.jpg'%}" alt="">
-								</div>
-								<div class="details">
-									<a href="blog-single.html">
-										<h6>Asteroids telescope</h6>
-									</a>
-									<p>02 Hours ago</p>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="single-sidebar-widget ads-widget">
+
+					<!--<div class="single-sidebar-widget ads-widget">
 						<a href="#"><img class="img-fluid" src="{% static 'img/blog/ads-banner.jpg'%}" alt=""></a>
 					</div>
 					<div class="single-sidebar-widget post-category-widget">
@@ -300,7 +252,7 @@
 							<li><a href="#">Lifestyle</a></li>
 							<li><a href="#">Adventure</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>

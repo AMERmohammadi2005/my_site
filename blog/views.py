@@ -13,7 +13,7 @@ def blog_view(request):
 
 def blog_single_view(request ,pid):
    
-    posts = Post.objects.filter(status = 1)
+    posts = Post.objects.filter(status = 1 , published_date__lte = timezone.now())
     post = get_object_or_404(posts  , pk = pid ,)
     post.counted_view += 1
     post.save(update_fields=['counted_view'])
@@ -28,10 +28,7 @@ def blog_single_view(request ,pid):
                 'next_post' :next_post }
     return render(request ,"blog/blog-single.html",context )
 
-def test_view(request , pid):
-
-    #post = Post.objects.get(id = pid)
-    post = get_object_or_404(Post , pk = pid)
-    context = {'post':post }
-    return render(request , "blog/test.html" , context)
+def test_view(request ):
+  
+    return render(request , "blog/test.html"  )
 
