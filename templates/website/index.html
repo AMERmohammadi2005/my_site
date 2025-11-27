@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {%load static%}
-
+{% load blog-tags %}
 {% block content %}
 
 
@@ -196,8 +196,14 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+
+         {% index_latestposts  %}
+        <!--<div class="row">
             <div class="active-recent-blog-carusel">
+
+
+               
+                
                 <div class="single-recent-blog-post item">
                     <div class="thumb">
                         <img class="img-fluid" src="{%static 'img/b1.jpg'%}" alt="">
@@ -350,7 +356,7 @@
                 </div>
 
             </div>
-        </div>
+        </div>-->
     </div>
 </section>
 <!-- End recent-blog Area -->
